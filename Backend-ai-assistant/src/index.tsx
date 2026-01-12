@@ -1,5 +1,5 @@
 import cors from "cors";
-import dotenv from "dotenv";
+import "dotenv/config";
 import express from "express";
 import { apiKey } from "./serverCLient";
 
@@ -18,3 +18,9 @@ app.get("/", (req, res) => {
 });
 
 
+const port=process.env.PORT || 8000;
+
+
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
